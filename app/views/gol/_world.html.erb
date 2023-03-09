@@ -1,0 +1,24 @@
+<%= turbo_frame_tag "worldJson" do %>
+  <% if worldJson %>
+    <div style="text-align: right;">
+      <%= button_to "NEXT", next_path, params: { worldJson: worldJson }, class: "btn btn-dark" %>
+    </div>
+    <div>
+      Generation : <%= getGenerationFromJSON(worldJson) %>
+      <br/>
+    </div>
+    <div>
+      <table class="table table-bordered">
+        <tbody>
+        <% worldJsonFromJSON(worldJson).each do |row| %>
+          <tr>
+            <% row.each do |col| %>
+              <td style="height: 10vh;background-color: <%= !!col["status"] == true ? "black" : "white" %>;"></td>
+            <% end %>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+<% end %>

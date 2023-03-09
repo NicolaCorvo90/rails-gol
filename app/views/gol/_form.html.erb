@@ -1,0 +1,12 @@
+<%= form_with do |form| %>
+  <div>
+    <span class="btn btn-dark btn-file">
+      Choose File
+      <%= form.file_field :file %>
+    </span>
+  </div>
+  <br/>
+  <div>
+    <%= form.submit "Upload", class: "btn btn-dark" %>
+  </div>
+<% end %>
