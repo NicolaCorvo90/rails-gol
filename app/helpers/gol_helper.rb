@@ -9,6 +9,12 @@ module GolHelper
   end
 
   def worldJsonToWorld(json)
+    if !json.key?('generation')
+      raise "Invalid JSON : It doesn't have generation key"
+    end
+    if !json.key?('world')
+      raise "Invalid JSON : It doesn't have world key"
+    end
     generation = json['generation']
     rows = json["world"].length
     cols = json["world"][0].length
