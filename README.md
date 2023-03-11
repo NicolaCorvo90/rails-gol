@@ -10,3 +10,5 @@ RUN
   rails server
 
 OR create docker image via dockerfile
+
+Deployed on railway : https://rails-gol-production.up.railway.app/ 
